@@ -27,7 +27,11 @@ const Services: React.FC = () => {
               </div>
               <div className="w-full lg:w-1/2">
                 <div className="inline-block p-3 md:p-4 bg-blue-100 text-blue-900 rounded-2xl mb-6 md:mb-8">
-                  {service.id === 'painting' ? <Brush size={32} md:size={40} /> : <Hammer size={32} md:size={40} />}
+                  {service.id === 'painting' ? (
+                    <Brush className="w-8 h-8 md:w-10 md:h-10" />
+                  ) : (
+                    <Hammer className="w-8 h-8 md:w-10 md:h-10" />
+                  )}
                 </div>
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 brand-font mb-4 md:mb-6 uppercase tracking-tight">{service.title}</h2>
                 <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 leading-relaxed font-medium">{service.description}</p>
@@ -63,7 +67,7 @@ const Services: React.FC = () => {
               <div key={i} className="relative p-6 md:p-8 bg-slate-50 rounded-3xl group hover:bg-blue-900 hover:text-white transition-all duration-300 border border-slate-100">
                 <div className="text-5xl md:text-6xl font-black opacity-10 absolute right-6 top-6 brand-font">{item.step}</div>
                 <div className="mb-6 p-4 bg-white rounded-2xl text-blue-600 shadow-sm w-fit group-hover:bg-blue-800 group-hover:text-white transition-colors">
-                  <item.icon size={24} md:size={32} />
+                  <item.icon className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <h4 className="text-lg md:text-xl font-black mb-2 uppercase tracking-wide">{item.title}</h4>
                 <p className="text-xs md:text-sm opacity-70 leading-relaxed font-medium">{item.desc}</p>
